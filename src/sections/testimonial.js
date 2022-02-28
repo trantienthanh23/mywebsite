@@ -17,9 +17,9 @@ const data = [
     description:
       'Get working experience to work with this amazing team & in future want to work together for bright future projects and also make deposit to freelancer.',
     avatar: Avatar1,
-    name: 'Denny Hilguston',
-    designation: '@denny.hil',
-    review: 4,
+    name: 'Thanh Tran',
+    designation: '@thanh.tran',
+    review: 5,
   },
   {
     id: 2,
@@ -29,7 +29,7 @@ const data = [
     avatar: Avatar2,
     name: 'Denny Hilguston',
     designation: '@denny.hil',
-    review: 5,
+    review: 3,
   },
   {
     id: 3,
@@ -101,7 +101,40 @@ const carouselParams = {
 
 export default function TestimonialCard() {
   return (
-   <h1>Testimonial Card</h1>
+   <section id="testemonial" sx={{variant:'section.testemonial'}}>
+     <Container css={{textAlign:'center'}}>
+      <SectionHeader
+        slogan="Rating"
+        title="Many rating get from customer"
+      />
+      </Container>
+      <Box sx={styles.carouselWrapper}>
+        <Carousel {...carouselParams}>
+          {data.map((item)=>(
+            <Box sx={styles.reviewCard} key={item.sliderClass}>
+              <Rating rating={item.review} />
+              <Heading as="h3" sx={styles.title}>
+                {item.title}
+              </Heading>
+              <Text sx={styles.description}>
+                {item.description}
+              </Text>
+              <div className="card-footer">
+                <div className="image">
+                  <Image src={item.avatar} alt="Client Image"/>
+                </div>
+                <div className="review-info">
+                  <Heading as="h4" sx={styles.heading}>
+                    {item.name}
+                  </Heading>
+                  <Text sx={styles.designation}>{item.designation}</Text>
+                </div>
+              </div>
+            </Box>
+          ))}
+        </Carousel>
+      </Box>
+   </section>
   );
 }
 

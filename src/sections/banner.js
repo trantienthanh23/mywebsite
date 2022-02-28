@@ -16,7 +16,9 @@ export default function Banner() {
           <Text as="p" variant="heroSecondary">
             Welcome to shop
           </Text>
+          <a href="#">
           <Button variant="primary">Buy now</Button>
+          </a>
         </Box>
         <Box sx={styles.banner.contentBox}>
           <Image src={BannerImg} alt="banner"/>
@@ -26,6 +28,9 @@ export default function Banner() {
   );
 }
 
+const data = {
+  btnURL: '#',
+};
 const styles = {
   banner: {
     pt: ['140px', '145px', '155px', '170px', null, null, '180px', '215px'],
