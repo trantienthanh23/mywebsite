@@ -1,8 +1,10 @@
+
 import React from 'react';
 import { FaStar } from 'react-icons/fa';
 
 const Rating = ({ rating }) => {
-  const totalRating = [];
+  const totalRating = [] ;
+
     for(let i = 0; i < 5; i++ ) {
       if (i < rating) {
         totalRating.push(
@@ -10,7 +12,7 @@ const Rating = ({ rating }) => {
             <FaStar/>
           </li>
         );
-      }else{
+      } else {
         totalRating.push(
           <li className="start-o" key={i}>
             <FaStar/>

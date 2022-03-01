@@ -19,7 +19,7 @@ const data = [
     avatar: Avatar1,
     name: 'Thanh Tran',
     designation: '@thanh.tran',
-    review: 5,
+    review: 3,
   },
   {
     id: 2,
@@ -102,7 +102,7 @@ const carouselParams = {
 export default function TestimonialCard() {
   return (
    <section id="testemonial" sx={{variant:'section.testemonial'}}>
-     <Container css={{textAlign:'center'}}>
+     <Container css={{ textAlign:'center' }}> 
       <SectionHeader
         slogan="Rating"
         title="Many rating get from customer"
@@ -110,9 +110,9 @@ export default function TestimonialCard() {
       </Container>
       <Box sx={styles.carouselWrapper}>
         <Carousel {...carouselParams}>
-          {data.map((item)=>(
+          {data.map((item) => (
             <Box sx={styles.reviewCard} key={item.sliderClass}>
-              <Rating rating={item.review} />
+              <Rating rating={item.review}/>
               <Heading as="h3" sx={styles.title}>
                 {item.title}
               </Heading>
@@ -123,7 +123,7 @@ export default function TestimonialCard() {
                 <div className="image">
                   <Image src={item.avatar} alt="Client Image"/>
                 </div>
-                <div className="review-info">
+                <div className="reviewer-info">
                   <Heading as="h4" sx={styles.heading}>
                     {item.name}
                   </Heading>
